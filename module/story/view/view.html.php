@@ -78,7 +78,7 @@
             if(common::hasPriv('story', 'batchCreate')) echo html::a($link, "<i class='icon icon-sitemap'></i> " . $lang->story->subdivide, '', $misc);
         }
 
-        common::printIcon('story', 'close',    "storyID=$story->id", $story, 'button', '', '', 'iframe showinonlybody', true);
+        common::printIcon('story', 'close',    "storyID=$story->id", $story, 'button', 'close', '', 'iframe showinonlybody', true);
         common::printIcon('story', 'activate', "storyID=$story->id", $story, 'button', '', '', 'iframe showinonlybody', true);
 
         if($config->global->flow != 'onlyStory' and !isonlybody() and (common::hasPriv('testcase', 'create') or common::hasPriv('testcase', 'batchCreate')))
@@ -105,7 +105,7 @@
         echo "<div class='divider'></div>";
         common::printIcon('story', 'edit', "storyID=$story->id", $story);
         common::printIcon('story', 'create', "productID=$story->product&branch=$story->branch&moduleID=$story->module&storyID=$story->id", $story, 'button', 'copy', '', 'iframe showinonlybody', true, "data-width='1050'");
-        common::printIcon('story', 'delete', "storyID=$story->id", $story, 'button', '', 'hiddenwin');
+        common::printIcon('story', 'delete', "storyID=$story->id", $story, 'button', 'trash', 'hiddenwin');
         ?>
         <?php endif;?>
       </div>
@@ -322,8 +322,8 @@
                   </td>
                 </tr>
                 <?php endif;?>
-                <tr class='text-top'>
-                  <th class='w-70px'><?php echo $lang->story->legendBugs;?></th>
+                <tr>
+                  <th class='text-top' class='w-70px'><?php echo $lang->story->legendBugs;?></th>
                   <td class='pd-0'>
                     <ul class='list-unstyled'>
                     <?php
@@ -335,8 +335,8 @@
                     </ul>
                   </td>
                 </tr>
-                <tr class='text-top'>
-                  <th><?php echo $lang->story->legendCases;?></th>
+                <tr>
+                  <th class='text-top'><?php echo $lang->story->legendCases;?></th>
                   <td class='pd-0'>
                     <ul class='list-unstyled'>
                     <?php
@@ -349,8 +349,8 @@
                   </td>
                 </tr>
                 <?php endif;?>
-                <tr class='text-top'>
-                  <th class='w-80px'><?php echo $lang->story->legendLinkStories;?></th>
+                <tr>
+                  <th class='text-top' class='w-80px'><?php echo $lang->story->legendLinkStories;?></th>
                   <td class='pd-0'>
                     <ul class='list-unstyled'>
                       <?php
@@ -363,8 +363,8 @@
                     </ul>
                   </td>
                 </tr>
-                <tr class='text-top'>
-                  <th><?php echo $lang->story->legendChildStories;?></th>
+                <tr>
+                  <th class='text-top'><?php echo $lang->story->legendChildStories;?></th>
                   <td class='pd-0'>
                     <ul class='list-unstyled'>
                       <?php

@@ -55,8 +55,8 @@
         <td><?php echo html::a(helper::createLink('release', 'view', "releaseID=$release->id"), sprintf('%03d', $release->id));?></td>
         <td>
           <?php 
-          $flagIcon = $release->marker ? "<icon class='icon icon-flag-alt'></icon> " : '';
-          echo $flagIcon . html::a(inlink('view', "release=$release->id"), $release->name);
+          $flagIcon = $release->marker ? "<icon class='icon icon-flag-alt' title='{$lang->release->marker}'></icon> " : '';
+          echo html::a(inlink('view', "release=$release->id"), $release->name) . $flagIcon;
           ?>
         </td>
         <td title='<?php echo $release->buildName?>'><?php echo html::a($this->createLink('build', 'view', "buildID=$release->buildID"), $release->buildName);?></td>
@@ -82,7 +82,7 @@
           if(common::hasPriv('release', 'delete', $release))
           {
               $deleteURL = $this->createLink('release', 'delete', "releaseID=$release->id&confirm=yes");
-              echo html::a("javascript:ajaxDelete(\"$deleteURL\",\"releaseList\",confirmDelete)", '<i class="icon-close"></i>', '', "class='btn' title='{$lang->release->delete}'");
+              echo html::a("javascript:ajaxDelete(\"$deleteURL\",\"releaseList\",confirmDelete)", '<i class="icon-trash"></i>', '', "class='btn' title='{$lang->release->delete}'");
           }
           ?>
         </td>

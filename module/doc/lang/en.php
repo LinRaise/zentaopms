@@ -159,6 +159,20 @@ $lang->doc->noEditedDoc        = 'You have not edited any document.';
 $lang->doc->noOpenedDoc        = 'You have not created any document.';
 $lang->doc->noCollectedDoc     = 'You have not collected any document.';
 
+$lang->doc->noticeAcl['lib']['product']['open']    = 'Everyone can access it unless the user has no access to the associated product.';
+$lang->doc->noticeAcl['lib']['product']['custom']  = 'Users of whitelists and associated product with access rights can access them.';
+$lang->doc->noticeAcl['lib']['product']['private'] = 'Creators and users of associated product with access rights can access them.';
+$lang->doc->noticeAcl['lib']['project']['open']    = 'Everyone can access it unless the user has no access to the associated project.';
+$lang->doc->noticeAcl['lib']['project']['custom']  = 'Users of whitelists and associated project with access rights can access them.';
+$lang->doc->noticeAcl['lib']['project']['private'] = 'Creators and users of associated project with access rights can access them.';
+$lang->doc->noticeAcl['lib']['custom']['open']     = 'Everyone can visit it.';
+$lang->doc->noticeAcl['lib']['custom']['custom']   = 'Whitelist users are accessible.';
+$lang->doc->noticeAcl['lib']['custom']['private']  = 'Only the creator can access it.';
+
+$lang->doc->noticeAcl['doc']['open']    = 'Everyone can access it unless the user does not have permission to belong to the document library.';
+$lang->doc->noticeAcl['doc']['custom']  = 'Whitelist users are accessible.';
+$lang->doc->noticeAcl['doc']['private'] = 'Only the creator can access it.';
+
 $lang->doc->placeholder = new stdclass();
 $lang->doc->placeholder->url = 'Url';
 
@@ -172,6 +186,10 @@ $lang->doclib->all     = 'All Library';
 $lang->doclib->select  = 'Select';
 $lang->doclib->project = $lang->projectCommon . ' Library';
 $lang->doclib->product = $lang->productCommon . ' Library';
+
+$lang->doclib->create['product'] = 'Create ' . $lang->productCommon . ' Library';
+$lang->doclib->create['project'] = 'Create ' . $lang->projectCommon . ' Library';
+$lang->doclib->create['custom']  = 'Create Custom Library';
 
 $lang->doclib->main['product'] =  'Main Library';
 $lang->doclib->main['project'] =  'Main Library';
